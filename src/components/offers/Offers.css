@@ -1,0 +1,117 @@
+/* ================= OUTER GREY BACKGROUND ================= */
+.mmt-offers {
+  background: #f2f5f8;
+  padding: 40px 0;
+}
+
+/* ================= WHITE BOX (MMT STYLE) ================= */
+.mmt-offers-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= HEADER ================= */
+.mmt-offers-box .mmt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mmt-offers-box .header-left {
+  display: flex;
+  align-items: center;
+}
+
+.mmt-offers-box h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-right: 20px;
+}
+
+.mmt-offers-box .tabs {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.mmt-offers-box .tabs span {
+  cursor: pointer;
+}
+
+.mmt-offers-box .tabs .active {
+  color: #008cff;
+  border-bottom: 2px solid #008cff;
+  padding-bottom: 6px;
+}
+
+.mmt-offers-box .view-all {
+  color: #008cff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ================= GRID ================= */
+.mmt-offers-box .offers-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ================= CARD ================= */
+.mmt-offers-box .mmt-card {
+  display: flex;
+  gap: 12px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.mmt-offers-box .mmt-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ================= CARD CONTENT ================= */
+.mmt-offers-box .card-content {
+  flex: 1;
+}
+
+.mmt-offers-box .card-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #6b6b6b;
+}
+
+.mmt-offers-box .mmt-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 4px 0;
+}
+
+.mmt-offers-box .desc {
+  font-size: 13px;
+  color: #4a4a4a;
+}
+
+.mmt-offers-box .code {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.mmt-offers-box .cta {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #008cff;
+  text-decoration: none;
+}

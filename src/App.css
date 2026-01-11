@@ -1,0 +1,25 @@
+.app {
+  display: flex;
+}
+
+/* MAIN CONTENT */
+.main {
+  width: 100%;
+  min-height: 100vh;
+
+  margin-left: 80px;              /* collapsed sidebar width */
+  transition: margin-left 0.35s ease;
+
+  background: #f8f9fb;
+}
+
+/* WHEN SIDEBAR OPEN */
+.main.shifted {
+  margin-left: 260px;             /* open sidebar width */
+}
+
+/* SAFETY */
+body {
+  margin: 0;
+  overflow-x: hidden;
+}

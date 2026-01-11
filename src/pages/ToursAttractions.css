@@ -1,0 +1,77 @@
+/* outer full width */
+.tours-wrapper {
+  width: 100%;
+}
+
+/* ✅ MAIN & ONLY FIX */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;          /* left-right center */
+  padding: 0 24px;         /* left-right spacing */
+}
+
+/* section spacing */
+.tour-section {
+  margin-bottom: 40px;
+}
+
+.tour-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.tour-section p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* grid */
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* card */
+.tour-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tour-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* hover intact */
+.tour-card:hover img {
+  transform: scale(1.1);
+}
+
+/* overlay */
+.tour-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  color: #fff;
+}
+
+
+/* full width */
+.tours-wrapper {
+  width: 100%;
+}
+
+/* ✅ ONLY INTERNATIONAL SECTION SPACING */
+.international-container {
+  max-width: 1200px;
+  margin: 0 auto;      /* left-right center */
+  padding: 0 24px;     /* left-right space */
+}
