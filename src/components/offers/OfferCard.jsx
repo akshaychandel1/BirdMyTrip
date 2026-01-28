@@ -1,135 +1,207 @@
-// export default function OfferCard({ item }) {
+
+// // import { useNavigate } from "react-router-dom";
+
+// // const OfferCard = ({ offer }) => {
+// //   const navigate = useNavigate();
+
+// //   const goToNextPage = () => {
+// //     navigate(`/offer/${offer.id}`);
+// //   };
+
+// //   return (
+// //     <div className="offer-card">
+// //       {/* Card click disabled */}
+// //       <img src={offer.image} alt={offer.title} />
+
+// //       <div className="offer-content">
+// //         <span className="category">{offer.category}</span>
+// //         <h3>{offer.title}</h3>
+// //         <p>{offer.description}</p>
+// //         <p className="code">Code: {offer.code}</p>
+
+// //         {/* ONLY BUTTONS CLICKABLE */}
+// //         <div className="offer-actions">
+// //           <button className="btn primary" onClick={goToNextPage}>
+// //             BOOK NOW
+// //           </button>
+
+// //           <button className="btn outline" onClick={goToNextPage}>
+// //             VIEW DETAILS
+// //           </button>
+
+// //           {/* <button className="btn text" onClick={goToNextPage}>
+// //             APPLY NOW
+// //           </button> */}
+// //         </div>
+// //       </div>
+// //     </div>
+// //   );
+// // };
+
+// // export default OfferCard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { useNavigate } from "react-router-dom";
+
+// const OfferCard = ({ offer }) => {
+//   const navigate = useNavigate();
+
+//   const goToDetails = () => navigate(`/offer/${offer.id}`);
+
 //   return (
-//     <div className="offer-card">
-//       <img src={item.img} alt={item.title} />
+//     <article className="offer-card glass-card">
+//       {/* Image – keep clickable off, the whole card is inert */}
+//       <img
+//         src={offer.image}
+//         alt={offer.title}
+//         className="offer-image"
+//         loading="lazy"
+//       />
 
-//       <div className="offer-content">
-//         <span className="offer-category">{item.category}</span>
-//         <h3>{item.title}</h3>
-//         <p>{item.desc}</p>
-
-//         {item.code && (
-//           <div className="offer-code">
-//             Code: <b>{item.code}</b>
-//           </div>
-//         )}
-
-//         <button>{item.btn}</button>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-// export default function OfferCard({ offer }) {
-//   return (
-//     <div className="offer-card">
-//       <img src={offer.image} alt={offer.title} />
-
-//       <div className="offer-content">
-//         <span className="offer-category">
-//           {offer.category.toUpperCase()}
-//         </span>
-
-//         <h3>{offer.title}</h3>
-//         <p>{offer.description}</p>
-
-//         {offer.code && (
-//           <div className="offer-code">
-//             Code: <strong>{offer.code}</strong>
-//           </div>
-//         )}
-
-//         <button>{offer.cta}</button>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-// import "./Offers.css";
-
-// export default function OfferCard({ offer }) {
-//   return (
-//     <div className="offer-card">
-//       <div className="offer-image">
-//         <img src={offer.image} alt="offer" />
-//       </div>
-
-//       <div className="offer-content">
-//         <div className="offer-top">
-//           <span className="offer-category">{offer.category}</span>
-//           <span className="offer-tnc">T&C'S APPLY</span>
-//         </div>
-
-//         <h3 className="offer-title">{offer.title}</h3>
-
-//         <p className="offer-desc">{offer.desc}</p>
-
-//         {offer.code && (
-//           <p className="offer-code">Code: {offer.code}</p>
-//         )}
-
-//         <span className="offer-cta">
-//           {offer.cta || "BOOK NOW"}
-//         </span>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-// import "./Offers.css";
-
-// export default function OfferCard({ offer }) {
-//   return (
-//     <div className="mmt-card">
-//       <img src={offer.image} alt="" />
-
-//       <div className="content">
-//         <div className="top">
+//       <div className="card-body">
+//         {/* top line – category & coupon code */}
+//         <div className="card-top">
 //           <span className="category">{offer.category}</span>
-//           <span className="tnc">T&C'S APPLY</span>
+//           <span className="code">Code: {offer.code}</span>
 //         </div>
 
-//         <h3>{offer.title}</h3>
+//         {/* main copy */}
+//         <h3 className="title">{offer.title}</h3>
+//         <p className="desc">{offer.description}</p>
 
-//         <p className="desc">{offer.desc}</p>
-
-//         {offer.code && <p className="code">Code: {offer.code}</p>}
-
-//         <span className="cta">{offer.cta}</span>
+//         {/* actions – only the buttons are interactive */}
+//         <div className="offer-actions">
+//           <button className="btn primary" onClick={goToDetails}>
+//             Book now
+//           </button>
+//           <button className="btn outline" onClick={goToDetails}>
+//             View details
+//           </button>
+//         </div>
 //       </div>
-//     </div>
+//     </article>
 //   );
-// }
+// };
+
+// export default OfferCard;
 
 
-import { Link } from "react-router-dom";
 
-export default function OfferCard({ offer }) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// OfferCard.js (updated with new design)
+import { useNavigate } from "react-router-dom";
+
+const OfferCard = ({ offer }) => {
+  const navigate = useNavigate();
+
+  const goToDetails = () => navigate(`/offer/${offer.id}`);
+
   return (
-    <div className="mmt-card">
-      <img src={offer.image} alt="offer" />
+    <article className="offer-card" onClick={goToDetails}>
+      {/* Image with hover effect */}
+      <div className="image-container" style={{ overflow: 'hidden' }}>
+        <img
+          src={offer.image}
+          alt={offer.title}
+          className="offer-image"
+          loading="lazy"
+        />
+      </div>
 
-      <div className="card-content">
+      <div className="card-body">
+        {/* Category and code */}
         <div className="card-top">
-          <span>{offer.category}</span>
-          <span>T&C'S APPLY</span>
+          <span className="category">{offer.category}</span>
+          <span className="code">Code: {offer.code}</span>
         </div>
 
-        <h3>{offer.title}</h3>
+        {/* Title and description */}
+        <h3 className="title">{offer.title}</h3>
+        <p className="desc">{offer.description}</p>
 
-        <p className="desc">{offer.desc}</p>
-
-        {offer.code && <p className="code">Code: {offer.code}</p>}
-
-        {/* 🔗 PAGE LINK */}
-        <Link to={offer.link} className="cta">
-          {offer.cta}
-        </Link>
+        {/* Action buttons */}
+        <div className="offer-actions">
+          <button 
+            className="btn primary" 
+            onClick={(e) => {
+              e.stopPropagation();
+              goToDetails();
+            }}
+          >
+            Book now
+          </button>
+          <button 
+            className="btn outline" 
+            onClick={(e) => {
+              e.stopPropagation();
+              goToDetails();
+            }}
+          >
+            View details
+          </button>
+        </div>
       </div>
-    </div>
+    </article>
   );
-}
+};
+
+export default OfferCard;

@@ -8,11 +8,10 @@ export default function BookBus() {
   const navigate = useNavigate();
 
   const bus = buses.find((b) => b.id === Number(id));
-  if (!bus) return <h2>Bus not found</h2>;
+  if (!bus) return <h2 style={{ padding: "120px" }}>Bus not found</h2>;
 
   return (
     <div className="book-bus">
-
       <button className="back-btn" onClick={() => navigate(-1)}>
         ← Back
       </button>

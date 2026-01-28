@@ -1,114 +1,125 @@
-
 // import React, { useState } from "react";
 // import { Routes, Route } from "react-router-dom";
 // import "./App.css";
 
-// /* ================= COMMON COMPONENTS ================= */
+// /* COMMON */
 // import Sidebar from "./components/Sidebar";
 // import Navbar from "./components/Navbar";
-// import Hero from "./components/Hero";
 // import Footer from "./components/Footer";
 
-// /* ================= HOME SECTIONS ================= */
+// /* HOME */
+// import Hero from "./components/Hero";
+// import ExploreMoreBar from "./components/ExploreMoreBar";
 // import OffersSection from "./components/offers/OffersSection";
 // import AirlinePartners from "./components/AirlinePartners";
-// import MegaLinksSection from "./components/MegaLinksSection";
 // import InfoSection from "./components/InfoSection";
+// import MegaLinksSection from "./components/MegaLinksSection";
 
-// /* ================= VISA PAGE (FROM PAGES FOLDER) ================= */
+// /* VISA / CRUISE / NIGHTCLUB */
 // import VisaSection from "./pages/visa/VisaSection";
+// import CruiseSection from "./pages/cruise/CruiseSection";
+// import NightClubSection from "./pages/nightclub/NightClubSection";
 
-// /* ================= AUTH ================= */
+// /* TOURS */
+// import ToursAttractions from "./pages/ToursAttractions";
+
+// /* FLIGHT STATUS */
+// import FlightStatusPage from "./pages/flightStatus/FlightStatusPage";
+
+// /* PAGES */
+// import Hotels from "./pages/Hotels";
+// import Flights from "./pages/Flights";
+// import Train from "./pages/Train";
+// import Holiday from "./pages/Holiday";
+// import GiftCard from "./pages/GiftCard";
+// import TripPlanner from "./pages/TripPlanner";
+// import InviteEarn from "./pages/InviteEarn";
 // import Login from "./pages/Login";
 // import Signup from "./pages/Signup";
 
-// /* ================= HOTELS ================= */
-// import Hotels from "./pages/Hotels";
-// import HotelDetails from "./pages/HotelDetails";
-// import BookHotel from "./pages/BookHotel";
-
-// /* ================= FLIGHTS ================= */
-// import Flights from "./pages/Flights";
-// import FlightDetails from "./pages/FlightDetails";
-// import BookFlight from "./pages/BookFlight";
-
-// /* ================= BUS ================= */
+// /* BUS */
 // import Bus from "./pages/Bus";
-// import BusDetails from "./pages/BusDetails";
 // import BookBus from "./pages/BookBus";
 
-// /* ================= TRAIN ================= */
-// import Train from "./pages/Train";
-// import TrainDetails from "./pages/TrainDetails";
-// import BookTrain from "./pages/BookTrain";
-
-// /* ================= CAB ================= */
+// /* CAB */
 // import Cab from "./pages/Cab";
 // import CabDetails from "./pages/CabDetails";
 
-// /* ================= HOLIDAY ================= */
-// import Holiday from "./pages/Holiday";
+// /* LIST YOUR PROPERTY */
+// import ListProperty from "./pages/ListProperty";
 
-// function App() {
+// /* ✅ PNR STATUS (ADDED ONLY) */
+// import PNRStatus from "./pages/PNRStatus";
+
+// export default function App() {
 //   const [sidebarOpen, setSidebarOpen] = useState(false);
 
 //   return (
 //     <div className="app">
-//       {/* SIDEBAR */}
 //       <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
 
-//       {/* MAIN CONTENT */}
 //       <div className={`main ${sidebarOpen ? "shifted" : ""}`}>
 //         <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
 //         <Routes>
-//           {/* ================= HOME ================= */}
+//           {/* HOME */}
 //           <Route
 //             path="/"
 //             element={
 //               <>
 //                 <Hero />
+//                 <ExploreMoreBar />
 //                 <OffersSection />
+
+//                 <VisaSection />
+//                 <CruiseSection />
+//                 <NightClubSection />
+
 //                 <AirlinePartners />
-//                 <MegaLinksSection />
 //                 <InfoSection />
+//                 <MegaLinksSection />
 //               </>
 //             }
 //           />
 
-//           {/* ================= VISA PAGE ================= */}
+//           {/* VISA / CRUISE / NIGHTCLUB */}
 //           <Route path="/visa" element={<VisaSection />} />
+//           <Route path="/cruise" element={<CruiseSection />} />
+//           <Route path="/night-club" element={<NightClubSection />} />
 
-//           {/* ================= AUTH ================= */}
-//           <Route path="/login" element={<Login />} />
-//           <Route path="/signup" element={<Signup />} />
+//           {/* TOURS */}
+//           <Route path="/tours" element={<ToursAttractions />} />
 
-//           {/* ================= HOTELS ================= */}
+//           {/* FLIGHT STATUS */}
+//           <Route path="/flight-status" element={<FlightStatusPage />} />
+
+//           {/* OTHER PAGES */}
 //           <Route path="/hotels" element={<Hotels />} />
-//           <Route path="/hotel/:id" element={<HotelDetails />} />
-//           <Route path="/book-hotel/:id" element={<BookHotel />} />
-
-//           {/* ================= FLIGHTS ================= */}
 //           <Route path="/flights" element={<Flights />} />
-//           <Route path="/flight/:id" element={<FlightDetails />} />
-//           <Route path="/book-flight/:id" element={<BookFlight />} />
-
-//           {/* ================= BUS ================= */}
-//           <Route path="/bus" element={<Bus />} />
-//           <Route path="/bus/:id" element={<BusDetails />} />
-//           <Route path="/book-bus/:id" element={<BookBus />} />
-
-//           {/* ================= TRAIN ================= */}
 //           <Route path="/train" element={<Train />} />
-//           <Route path="/train/:id" element={<TrainDetails />} />
-//           <Route path="/book-train/:id" element={<BookTrain />} />
+//           <Route path="/holiday" element={<Holiday />} />
 
-//           {/* ================= CAB ================= */}
+//           <Route path="/trip-planner" element={<TripPlanner />} />
+//           <Route path="/gift" element={<GiftCard />} />
+//           <Route path="/invite" element={<InviteEarn />} />
+
+//           {/* LIST YOUR PROPERTY */}
+//           <Route path="/list-your-property" element={<ListProperty />} />
+
+//           {/* ✅ PNR STATUS */}
+//           <Route path="/pnr" element={<PNRStatus />} />
+
+//           {/* BUS */}
+//           <Route path="/bus" element={<Bus />} />
+//           <Route path="/bus/:id" element={<BookBus />} />
+
+//           {/* CAB */}
 //           <Route path="/cab" element={<Cab />} />
 //           <Route path="/cab/:id" element={<CabDetails />} />
 
-//           {/* ================= HOLIDAY ================= */}
-//           <Route path="/holiday" element={<Holiday />} />
+//           {/* AUTH */}
+//           <Route path="/login" element={<Login />} />
+//           <Route path="/signup" element={<Signup />} />
 //         </Routes>
 
 //         <Footer />
@@ -117,130 +128,648 @@
 //   );
 // }
 
-// export default App;
 
 
 
-import React, { useState } from "react";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from "react";
+// import { Routes, Route } from "react-router-dom";
+// import "./App.css";
+
+// /* COMMON */
+// import Sidebar from "./components/Sidebar";
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
+
+// /* PAGES */
+// import Hero from "./components/Hero";
+// import ExploreMoreBar from "./components/ExploreMoreBar";
+// import OffersSection from "./components/offers/OffersSection";
+// import AirlinePartners from "./components/AirlinePartners";
+// import InfoSection from "./components/InfoSection";
+// import MegaLinksSection from "./components/MegaLinksSection";
+// import VisaSection from "./pages/visa/VisaSection";
+// import CruiseSection from "./pages/cruise/CruiseSection";
+// import NightClubSection from "./pages/nightclub/NightClubSection";
+// import ToursAttractions from "./pages/ToursAttractions";
+// import FlightStatusPage from "./pages/flightStatus/FlightStatusPage";
+// import Hotels from "./pages/Hotels";
+// import Flights from "./pages/Flights";
+// import Train from "./pages/Train";
+// import Holiday from "./pages/Holiday";
+// import GiftCard from "./pages/GiftCard";
+// import TripPlanner from "./pages/TripPlanner";
+// import InviteEarn from "./pages/InviteEarn";
+// import Login from "./pages/Login";
+// import Signup from "./pages/Signup";
+// import Bus from "./pages/Bus";
+// import BookBus from "./pages/BookBus";
+// import Cab from "./pages/Cab";
+// import CabDetails from "./pages/CabDetails";
+// import ListProperty from "./pages/ListProperty";
+// import PNRStatus from "./pages/PNRStatus";
+
+// export default function App() {
+//   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+//   return (
+//     <div className="app-wrapper">
+//       <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+      
+//       <div className="content-layout">
+//         <Sidebar open={sidebarOpen} />
+        
+//         <main className={`main-body ${sidebarOpen ? "sidebar-open" : "sidebar-collapsed"}`}>
+//           <Routes>
+//             <Route path="/" element={
+//               <>
+//                 <Hero />
+//                 <ExploreMoreBar />
+//                 <OffersSection />
+//                 <VisaSection />
+//                 <CruiseSection />
+//                 <NightClubSection />
+//                 <AirlinePartners />
+//                 <InfoSection />
+//                 <MegaLinksSection />
+//               </>
+//             } />
+//             <Route path="/visa" element={<VisaSection />} />
+//             <Route path="/cruise" element={<CruiseSection />} />
+//             <Route path="/night-club" element={<NightClubSection />} />
+//             <Route path="/tours" element={<ToursAttractions />} />
+//             <Route path="/flight-status" element={<FlightStatusPage />} />
+//             <Route path="/hotels" element={<Hotels />} />
+//             <Route path="/flights" element={<Flights />} />
+//             <Route path="/train" element={<Train />} />
+//             <Route path="/holiday" element={<Holiday />} />
+//             <Route path="/trip-planner" element={<TripPlanner />} />
+//             <Route path="/gift" element={<GiftCard />} />
+//             <Route path="/invite" element={<InviteEarn />} />
+//             <Route path="/list-your-property" element={<ListProperty />} />
+//             <Route path="/pnr" element={<PNRStatus />} />
+//             <Route path="/bus" element={<Bus />} />
+//             <Route path="/bus/:id" element={<BookBus />} />
+//             <Route path="/cab" element={<Cab />} />
+//             <Route path="/cab/:id" element={<CabDetails />} />
+//             <Route path="/login" element={<Login />} />
+//             <Route path="/signup" element={<Signup />} />
+//           </Routes>
+//           <Footer />
+//         </main>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import { Routes, Route } from "react-router-dom";
+// import "./App.css";
+
+// /* COMMON */
+// import Sidebar from "./components/Sidebar";
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
+
+// /* PAGES */
+// import Hero from "./components/Hero";
+// import ExploreMoreBar from "./components/ExploreMoreBar";
+// import OffersSection from "./components/offers/OffersSection";
+// import AirlinePartners from "./components/AirlinePartners";
+// import InfoSection from "./components/InfoSection";
+// import MegaLinksSection from "./components/MegaLinksSection";
+// import VisaSection from "./pages/visa/VisaSection";
+// import CruiseSection from "./pages/cruise/CruiseSection";
+// import NightClubSection from "./pages/nightclub/NightClubSection";
+// import ToursAttractions from "./pages/ToursAttractions";
+// import FlightStatusPage from "./pages/flightStatus/FlightStatusPage";
+// import Hotels from "./pages/Hotels";
+// import Flights from "./pages/Flights";
+// import Train from "./pages/Train";
+// import Holiday from "./pages/Holiday";
+// import GiftCard from "./pages/GiftCard";
+// import TripPlanner from "./pages/TripPlanner";
+// import InviteEarn from "./pages/InviteEarn";
+// import Login from "./pages/Login";
+// import Signup from "./pages/Signup";
+// import Bus from "./pages/Bus";
+// import BookBus from "./pages/BookBus";
+// import Cab from "./pages/Cab";
+// import CabDetails from "./pages/CabDetails";
+// import ListProperty from "./pages/ListProperty";
+// import PNRStatus from "./pages/PNRStatus";
+// import NewUserExclusive from "./components/NewUserExclusive";
+// import BannerCarousel from "./components/BannerCarousel.jsx";
+// import PlacesCarousel from "./components/PlacesCarousel.jsx";
+// import HotelCard from "./components/HotelCard.jsx";
+// // import HotelList from "./components/HotelList.jsx";
+
+// export default function App() {
+//   const [sidebarOpen, setSidebarOpen] = useState(false);
+//   const [isMobile, setIsMobile] = useState(false);
+
+//   // Detect mobile screen
+//   useEffect(() => {
+//     const checkMobile = () => {
+//       setIsMobile(window.innerWidth <= 768);
+//     };
+    
+//     checkMobile();
+//     window.addEventListener("resize", checkMobile);
+    
+//     return () => window.removeEventListener("resize", checkMobile);
+//   }, []);
+
+//   const toggleSidebar = () => {
+//     setSidebarOpen(!sidebarOpen);
+//   };
+
+//   const closeSidebar = () => {
+//     if (isMobile) {
+//       setSidebarOpen(false);
+//     }
+//   };
+
+//   // Handle backdrop click
+//   const handleBackdropClick = () => {
+//     if (sidebarOpen && isMobile) {
+//       setSidebarOpen(false);
+//     }
+//   };
+
+//   return (
+//     <div className="app-wrapper">
+//       <Navbar toggleSidebar={toggleSidebar} />
+      
+//       {/* Mobile Backdrop */}
+//       {sidebarOpen && isMobile && (
+//         <div 
+//           className="sidebar-backdrop" 
+//           onClick={handleBackdropClick}
+//         />
+//       )}
+      
+//       <div className="content-layout">
+//         <Sidebar open={sidebarOpen} />
+        
+//         <main 
+//           className={`main-body ${sidebarOpen ? "sidebar-open" : "sidebar-collapsed"}`}
+//           onClick={isMobile && sidebarOpen ? handleBackdropClick : undefined}
+//         >
+//           <Routes>
+//             <Route path="/" element={
+//               <>
+//                 <Hero />
+//                 <ExploreMoreBar />
+//                 <NewUserExclusive />
+//                 <BannerCarousel />
+//                 <PlacesCarousel />
+//                 {/* <HotelCard/> */}
+//                 <OffersSection />
+//                 <VisaSection />
+//                 <CruiseSection />
+//                 <NightClubSection />
+//                 <AirlinePartners />
+//                 <InfoSection />
+//                 <MegaLinksSection />
+//               </>
+//             } />
+//             <Route path="/visa" element={<VisaSection />} />
+//             <Route path="/cruise" element={<CruiseSection />} />
+//             <Route path="/night-club" element={<NightClubSection />} />
+//             <Route path="/tours" element={<ToursAttractions />} />
+//             <Route path="/flight-status" element={<FlightStatusPage />} />
+//             <Route path="/hotels" element={<Hotels />} />
+//             <Route path="/flights" element={<Flights />} />
+//             <Route path="/train" element={<Train />} />
+//             <Route path="/holiday" element={<Holiday />} />
+//             <Route path="/trip-planner" element={<TripPlanner />} />
+//             <Route path="/gift" element={<GiftCard />} />
+//             <Route path="/invite" element={<InviteEarn />} />
+//             <Route path="/list-your-property" element={<ListProperty />} />
+//             <Route path="/pnr" element={<PNRStatus />} />
+//             <Route path="/bus" element={<Bus />} />
+//             <Route path="/bus/:id" element={<BookBus />} />
+//             <Route path="/cab" element={<Cab />} />
+//             <Route path="/cab/:id" element={<CabDetails />} />
+//             <Route path="/login" element={<Login />} />
+//             <Route path="/signup" element={<Signup />} />
+//           </Routes>
+//           <Footer />
+//         </main>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import { Routes, Route } from "react-router-dom";
+// import "./App.css";
+
+// /* COMMON */
+// import Sidebar from "./components/Sidebar";
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
+
+// /* PAGES */
+// import Hero from "./components/Hero";
+// import ExploreMoreBar from "./components/ExploreMoreBar";
+// import OffersSection from "./components/offers/OffersSection";
+// import AirlinePartners from "./components/AirlinePartners";
+// import InfoSection from "./components/InfoSection";
+// import MegaLinksSection from "./components/MegaLinksSection";
+// import VisaSection from "./pages/visa/VisaSection";
+// import CruiseSection from "./pages/cruise/CruiseSection";
+// import NightClubSection from "./pages/nightclub/NightClubSection";
+// import ToursAttractions from "./pages/ToursAttractions";
+// import FlightStatusPage from "./pages/flightStatus/FlightStatusPage";
+// import Hotels from "./pages/Hotels";
+// import Flights from "./pages/Flights";
+// import Train from "./pages/Train";
+// import Holiday from "./pages/Holiday";
+// import GiftCard from "./pages/GiftCard";
+// import TripPlanner from "./pages/TripPlanner";
+// import InviteEarn from "./pages/InviteEarn";
+// import Login from "./pages/Login";
+// import Signup from "./pages/Signup";
+// import Bus from "./pages/Bus";
+// import BookBus from "./pages/BookBus";
+// import Cab from "./pages/Cab";
+// import CabDetails from "./pages/CabDetails";
+// import ListProperty from "./pages/ListProperty";
+// import PNRStatus from "./pages/PNRStatus";
+// import NewUserExclusive from "./components/NewUserExclusive";
+// import BannerCarousel from "./components/BannerCarousel.jsx";
+// import PlacesCarousel from "./components/PlacesCarousel.jsx";
+
+// export default function App() {
+//   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+//   const toggleSidebar = () => {
+//     console.log("Toggle clicked, current state:", sidebarOpen);
+//     setSidebarOpen(!sidebarOpen);
+//   };
+
+//   // Simple App.jsx - बाकी logic Sidebar component में है
+//   return (
+//     <div className="app-wrapper">
+//       <Navbar toggleSidebar={toggleSidebar} sidebarOpen={sidebarOpen} />
+      
+//       <div className="content-layout">
+//         {/* Sidebar Component */}
+//         <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
+        
+//         {/* Main Content */}
+//         <main className={`main-body ${sidebarOpen ? 'sidebar-open' : ''}`}>
+//           <Routes>
+//             <Route path="/" element={
+//               <>
+//                 <Hero />
+//                 <ExploreMoreBar />
+//                 <NewUserExclusive />
+//                 <BannerCarousel />
+//                 <PlacesCarousel />
+//                 <OffersSection />
+//                 <VisaSection />
+//                 <CruiseSection />
+//                 <NightClubSection />
+//                 <AirlinePartners />
+//                 <InfoSection />
+//                 <MegaLinksSection />
+//               </>
+//             } />
+//             <Route path="/visa" element={<VisaSection />} />
+//             <Route path="/cruise" element={<CruiseSection />} />
+//             <Route path="/night-club" element={<NightClubSection />} />
+//             <Route path="/tours" element={<ToursAttractions />} />
+//             <Route path="/flight-status" element={<FlightStatusPage />} />
+//             <Route path="/hotels" element={<Hotels />} />
+//             <Route path="/flights" element={<Flights />} />
+//             <Route path="/train" element={<Train />} />
+//             <Route path="/holiday" element={<Holiday />} />
+//             <Route path="/trip-planner" element={<TripPlanner />} />
+//             <Route path="/gift" element={<GiftCard />} />
+//             <Route path="/invite" element={<InviteEarn />} />
+//             <Route path="/list-your-property" element={<ListProperty />} />
+//             <Route path="/pnr" element={<PNRStatus />} />
+//             <Route path="/bus" element={<Bus />} />
+//             <Route path="/bus/:id" element={<BookBus />} />
+//             <Route path="/cab" element={<Cab />} />
+//             <Route path="/cab/:id" element={<CabDetails />} />
+//             <Route path="/login" element={<Login />} />
+//             <Route path="/signup" element={<Signup />} />
+//           </Routes>
+//           <Footer />
+//         </main>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-/* ================= COMMON COMPONENTS ================= */
+/* COMMON */
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 
-/* ================= HOME SECTIONS ================= */
+/* PAGES */
+import Hero from "./components/Hero";
+import ExploreMoreBar from "./components/ExploreMoreBar";
 import OffersSection from "./components/offers/OffersSection";
 import AirlinePartners from "./components/AirlinePartners";
-import MegaLinksSection from "./components/MegaLinksSection";
 import InfoSection from "./components/InfoSection";
-
-/* ================= PAGES ================= */
+import MegaLinksSection from "./components/MegaLinksSection";
 import VisaSection from "./pages/visa/VisaSection";
+import CruiseSection from "./pages/cruise/CruiseSection";
+import NightClubSection from "./pages/nightclub/NightClubSection";
 import ToursAttractions from "./pages/ToursAttractions";
-
-/* ================= AUTH ================= */
+import FlightStatusPage from "./pages/flightStatus/FlightStatusPage";
+import Hotels from "./pages/Hotels";
+import Flights from "./pages/Flights";
+import Train from "./pages/Train";
+import Holiday from "./pages/Holiday";
+import GiftCard from "./pages/GiftCard";
+import TripPlanner from "./pages/TripPlanner";
+import InviteEarn from "./pages/InviteEarn";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-
-/* ================= HOTELS ================= */
-import Hotels from "./pages/Hotels";
-import HotelDetails from "./pages/HotelDetails";
-import BookHotel from "./pages/BookHotel";
-
-/* ================= FLIGHTS ================= */
-import Flights from "./pages/Flights";
-import FlightDetails from "./pages/FlightDetails";
-import BookFlight from "./pages/BookFlight";
-
-/* ================= BUS ================= */
 import Bus from "./pages/Bus";
-import BusDetails from "./pages/BusDetails";
 import BookBus from "./pages/BookBus";
-
-/* ================= TRAIN ================= */
-import Train from "./pages/Train";
-import TrainDetails from "./pages/TrainDetails";
-import BookTrain from "./pages/BookTrain";
-
-/* ================= CAB ================= */
 import Cab from "./pages/Cab";
 import CabDetails from "./pages/CabDetails";
+import ListProperty from "./pages/ListProperty";
+import PNRStatus from "./pages/PNRStatus";
+import NewUserExclusive from "./components/NewUserExclusive";
+import BannerCarousel from "./components/BannerCarousel.jsx";
+import PlacesCarousel from "./components/PlacesCarousel.jsx";
 
-/* ================= HOLIDAY ================= */
-import Holiday from "./pages/Holiday";
-
-function App() {
+export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile screen
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      
+      // Desktop पर sidebar default open रखें
+      if (!mobile && !sidebarOpen) {
+        setSidebarOpen(true);
+      }
+      
+      // Mobile पर sidebar default close रखें
+      if (mobile && sidebarOpen) {
+        setSidebarOpen(false);
+      }
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const toggleSidebar = () => {
+    console.log("Toggling sidebar - Mobile:", isMobile, "Current:", sidebarOpen);
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  // Handle backdrop click
+  const handleBackdropClick = () => {
+    console.log("Backdrop clicked");
+    if (sidebarOpen && isMobile) {
+      setSidebarOpen(false);
+    }
+  };
+
+  // Prevent body scroll when sidebar is open on mobile
+  useEffect(() => {
+    if (isMobile && sidebarOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.classList.add("sidebar-open");
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.classList.remove("sidebar-open");
+    }
+    
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.classList.remove("sidebar-open");
+    };
+  }, [sidebarOpen, isMobile]);
+
+  // Handle link clicks on mobile
+  const handleLinkClick = () => {
+    if (isMobile) {
+      setSidebarOpen(false);
+    }
+  };
 
   return (
-    <div className="app">
-      {/* SIDEBAR */}
-      <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
-
-      {/* MAIN CONTENT */}
-      <div className={`main ${sidebarOpen ? "shifted" : ""}`}>
-        <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
-
-        <Routes>
-          {/* ================= HOME ================= */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <OffersSection />
-                <AirlinePartners />
-                <MegaLinksSection />
-                <InfoSection />
-              </>
+    <div className={`app-wrapper ${sidebarOpen && isMobile ? 'sidebar-open' : ''}`}>
+      <Navbar toggleSidebar={toggleSidebar} sidebarOpen={sidebarOpen} />
+      
+      {/* Mobile Backdrop - Only show on mobile when sidebar is open */}
+      {sidebarOpen && isMobile && (
+        <div 
+          className="sidebar-backdrop" 
+          onClick={handleBackdropClick}
+          aria-hidden="true"
+        />
+      )}
+      
+      <div className="content-layout">
+        {/* Sidebar Component */}
+        <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
+        
+        {/* Main Content */}
+        <main 
+          className={`main-body ${sidebarOpen ? 'sidebar-open' : ''}`}
+          onClick={(e) => {
+            // Mobile पर main content click से sidebar close
+            if (isMobile && sidebarOpen && e.target === e.currentTarget) {
+              setSidebarOpen(false);
             }
-          />
-
-          {/* ================= TOURS & ATTRACTIONS ================= */}
-          <Route path="/tours" element={<ToursAttractions />} />
-
-          {/* ================= VISA ================= */}
-          <Route path="/visa" element={<VisaSection />} />
-
-          {/* ================= AUTH ================= */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-
-          {/* ================= HOTELS ================= */}
-          <Route path="/hotels" element={<Hotels />} />
-          <Route path="/hotel/:id" element={<HotelDetails />} />
-          <Route path="/book-hotel/:id" element={<BookHotel />} />
-
-          {/* ================= FLIGHTS ================= */}
-          <Route path="/flights" element={<Flights />} />
-          <Route path="/flight/:id" element={<FlightDetails />} />
-          <Route path="/book-flight/:id" element={<BookFlight />} />
-
-          {/* ================= BUS ================= */}
-          <Route path="/bus" element={<Bus />} />
-          <Route path="/bus/:id" element={<BusDetails />} />
-          <Route path="/book-bus/:id" element={<BookBus />} />
-
-          {/* ================= TRAIN ================= */}
-          <Route path="/train" element={<Train />} />
-          <Route path="/train/:id" element={<TrainDetails />} />
-          <Route path="/book-train/:id" element={<BookTrain />} />
-
-          {/* ================= CAB ================= */}
-          <Route path="/cab" element={<Cab />} />
-          <Route path="/cab/:id" element={<CabDetails />} />
-
-          {/* ================= HOLIDAY ================= */}
-          <Route path="/holiday" element={<Holiday />} />
-        </Routes>
-
-        <Footer />
+          }}
+        >
+          <div className="page-content">
+            <Routes>
+              <Route path="/" element={
+                <>
+                  <Hero />
+                  <ExploreMoreBar />
+                  <NewUserExclusive />
+                  <BannerCarousel />
+                  <PlacesCarousel />
+                  <OffersSection />
+                  <VisaSection />
+                  <CruiseSection />
+                  <NightClubSection />
+                  <AirlinePartners />
+                  <InfoSection />
+                  <MegaLinksSection />
+                </>
+              } />
+              <Route path="/visa" element={<VisaSection />} />
+              <Route path="/cruise" element={<CruiseSection />} />
+              <Route path="/night-club" element={<NightClubSection />} />
+              <Route path="/tours" element={<ToursAttractions />} />
+              <Route path="/flight-status" element={<FlightStatusPage />} />
+              <Route path="/hotels" element={<Hotels />} />
+              <Route path="/flights" element={<Flights />} />
+              <Route path="/train" element={<Train />} />
+              <Route path="/holiday" element={<Holiday />} />
+              <Route path="/trip-planner" element={<TripPlanner />} />
+              <Route path="/gift" element={<GiftCard />} />
+              <Route path="/invite" element={<InviteEarn />} />
+              <Route path="/list-your-property" element={<ListProperty />} />
+              <Route path="/pnr" element={<PNRStatus />} />
+              <Route path="/bus" element={<Bus />} />
+              <Route path="/bus/:id" element={<BookBus />} />
+              <Route path="/cab" element={<Cab />} />
+              <Route path="/cab/:id" element={<CabDetails />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+            <Footer />
+          </div>
+        </main>
       </div>
     </div>
   );
 }
-
-export default App;

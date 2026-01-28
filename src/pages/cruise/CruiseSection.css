@@ -1,0 +1,49 @@
+/* luxury cruise container */
+.cruise-container {
+  margin-top: 70px;
+  padding: 30px 40px 40px;
+  background: linear-gradient(180deg, #eef7ff, #ffffff);
+}
+
+/* headings */
+.cruise-container h2 {
+  color: #0b1f44;
+  letter-spacing: 0.4px;
+}
+
+.cruise-container p {
+  color: #5c6b82;
+}
+
+/* card look */
+.cruise-card {
+  height: 260px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* image polish */
+.cruise-card img {
+  filter: brightness(0.95) contrast(1.05);
+}
+
+/* overlay style */
+.cruise-container .tour-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* hover */
+.cruise-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .cruise-card {
+    height: 220px;
+  }
+}

@@ -1,33 +1,3 @@
-// import "./Offers.css";
-// import OffersHeader from "./OffersHeader";
-// import OffersGrid from "./OffersGrid";
-
-// export default function OffersSection() {
-//   return (
-//     <section className="offers-section">
-//       <OffersHeader />
-//       <OffersGrid />
-//     </section>
-//   );
-// }
-
-
-
-// import "./Offers.css";
-// import OffersHeader from "./OffersHeader";
-// import OffersGrid from "./OffersGrid";
-
-// export default function OffersSection() {
-//   return (
-//     <section className="offers-section">
-//       {/* MMT STYLE WHITE CONTAINER */}
-//       <div className="offers-container">
-//         <OffersHeader />
-//         <OffersGrid />
-//       </div>
-//     </section>
-//   );
-// }
 
 // import OffersHeader from "./OffersHeader";
 // import OffersGrid from "./OffersGrid";
@@ -36,20 +6,8 @@
 // export default function OffersSection() {
 //   return (
 //     <section className="mmt-offers">
-//       <OffersHeader />
-//       <OffersGrid />
-//     </section>
-//   );
-// }
-
-// import OffersHeader from "./OffersHeader";
-// import OffersGrid from "./OffersGrid";
-// import "./Offers.css";
-
-// export default function OffersSection() {
-//   return (
-//     <section className="mmt-offers">
-//       <div className="mmt-offers-container">
+//       {/* 🔥 WHITE BOX LIKE MMT */}
+//       <div className="mmt-offers-box">
 //         <OffersHeader />
 //         <OffersGrid />
 //       </div>
@@ -59,18 +17,50 @@
 
 
 
+// import { useState } from "react";
+// import OffersHeader from "./OffersHeader";
+// import OffersGrid from "./OffersGrid";
+// import offersData from "../../data/offersData"; // ✅ FIXED
+// import "./Offers.css";
 
+// export default function OffersSection() {
+//   const [activeTab, setActiveTab] = useState("all");
+
+//   return (
+//     <section className="mmt-offers">
+//       <div className="mmt-offers-box">
+//         <OffersHeader activeTab={activeTab} setActiveTab={setActiveTab} />
+//         <OffersGrid activeTab={activeTab} offersData={offersData} />
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+import { useState } from "react";
 import OffersHeader from "./OffersHeader";
 import OffersGrid from "./OffersGrid";
+import offersData from "../../data/offersData";
 import "./Offers.css";
 
 export default function OffersSection() {
+  const [activeTab, setActiveTab] = useState("all");
+
   return (
-    <section className="mmt-offers">
-      {/* 🔥 WHITE BOX LIKE MMT */}
-      <div className="mmt-offers-box">
-        <OffersHeader />
-        <OffersGrid />
+    <section className="offers-section">
+      <div className="offers-wrapper">
+        <OffersHeader activeTab={activeTab} setActiveTab={setActiveTab} />
+        <OffersGrid activeTab={activeTab} offersData={offersData} />
       </div>
     </section>
   );

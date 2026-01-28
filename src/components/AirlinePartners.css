@@ -1,10 +1,10 @@
-/* Page background same as offers */
+/* Page background */
 .airline-section {
   background: #f2f6f9;
-  padding: 30px 0 40px;
+  padding: 20px 0 20px;
 }
 
-/* BIG WHITE BOX */
+/* Container */
 .airline-container {
   max-width: 1200px;
   margin: auto;
@@ -20,47 +20,20 @@
   margin-bottom: 20px;
 }
 
-/* GRID */
+/* Grid */
 .airline-grid {
+  background: #ffffff;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-/* CARD */
+/* Card – clean image only */
 .airline-card {
   height: 140px;
   border-radius: 18px;
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  transition: transform 0.3s ease;
-}
-
-.airline-card:hover {
-  transform: translateY(-4px);
-}
-
-/* DARK GRADIENT */
-.airline-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.55),
-    rgba(0, 0, 0, 0.15)
-  );
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-}
-
-/* TEXT */
-.airline-overlay span {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 600;
+  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18); */
 }

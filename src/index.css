@@ -1,4 +1,19 @@
-.app {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Utilities */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+/* Tumhara purana CSS iske niche reh sakta hai */
+/* .app {
   display: flex;
   min-height: 100vh;
 }
@@ -7,4 +22,4 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-}
+} */

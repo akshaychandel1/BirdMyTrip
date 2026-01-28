@@ -1,77 +1,86 @@
-/* outer full width */
 .tours-wrapper {
   width: 100%;
 }
 
-/* ✅ MAIN & ONLY FIX */
-.main-container {
-  max-width: 1200px;
-  margin: 0 auto;          /* left-right center */
-  padding: 0 24px;         /* left-right spacing */
+/* Light blue background */
+.special-container {
+  margin-top: 70px;
+  padding: 40px;
+  background: #f1f7ff;
 }
 
-/* section spacing */
+/* Section */
 .tour-section {
-  margin-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
 }
 
 .tour-section h2 {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
+  margin-bottom: 6px;
 }
 
 .tour-section p {
-  font-size: 14px;
   color: #666;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
 }
 
-/* grid */
+/* Grid */
 .tour-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
+  display: flex;
+  gap: 28px;
 }
 
-/* card */
+/* Card */
 .tour-card {
   position: relative;
-  border-radius: 12px;
+  flex: 1;
+  height: 260px;
+  background: #fff;
+  padding: 6px;
+  border-radius: 20px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .tour-card img {
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
+  border-radius: 16px;
   transition: transform 0.4s ease;
 }
 
-/* hover intact */
 .tour-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.06);
 }
 
-/* overlay */
+/* Overlay */
 .tour-overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-  display: flex;
-  align-items: flex-end;
-  padding: 12px;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+  padding: 14px;
+  border-radius: 0 0 16px 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+}
+
+.tour-overlay h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
   color: #fff;
 }
 
+/* Responsive */
+@media (max-width: 900px) {
+  .tour-grid {
+    flex-direction: column;
+  }
 
-/* full width */
-.tours-wrapper {
-  width: 100%;
-}
-
-/* ✅ ONLY INTERNATIONAL SECTION SPACING */
-.international-container {
-  max-width: 1200px;
-  margin: 0 auto;      /* left-right center */
-  padding: 0 24px;     /* left-right space */
+  .tour-card {
+    height: 220px;
+  }
 }

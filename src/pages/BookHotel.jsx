@@ -1,25 +1,3 @@
-// import React from "react";
-// import { useParams } from "react-router-dom";
-// import hotels from "../data/hotelsData";
-
-// export default function BookHotel() {
-//   const { id } = useParams();
-//   const hotel = hotels.find((h) => h.id === Number(id));
-
-//   return (
-//     <div style={{ padding: 30 }}>
-//       <h2>Booking Confirmation</h2>
-//       <h3>{hotel.name}</h3>
-//       <p>City: {hotel.city}</p>
-//       <p>Price: ₹{hotel.price} / night</p>
-
-//       <button style={{ padding: "10px 20px" }}>
-//         Confirm Booking
-//       </button>
-//     </div>
-//   );
-// }
-
 
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";

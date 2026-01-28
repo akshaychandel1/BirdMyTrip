@@ -1,337 +1,321 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
-
-/* =====================================================
-   GLOBAL RESET
-===================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Lato', sans-serif;
-}
-
-/* =====================================================
-   TOP NAVBAR (Buttons wali strip)
-===================================================== */
+/* Navbar.css - Mobile Responsive */
 .top-navbar {
-  width: 90%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
   background: #ffffff;
-  padding: 6px 24px;
+  z-index: 2000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 13px;
-  position: relative;
-  z-index: 0;
-  margin: 0 auto;
+  border-bottom: 1px solid #e7e7e7;
+  transition: all 0.3s ease;
+  padding: 0 15px;
 }
 
 .top-navbar.scrolled {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* LEFT LINKS */
-.nav-left {
+.nav-container {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.nav-btn {
-  color: #008cff;
-  font-weight: 700;
-  text-decoration: none;
-  padding: 4px 8px;
-  border-radius: 4px;
-  position: relative;
-  transition: background 0.2s ease;
-  white-space: nowrap;
-}
-
-.nav-btn:hover {
-  background: #eaf5ff;
-}
-
-.nav-btn:not(:last-child)::after {
-  content: "|";
-  color: #d8d8d8;
-  margin-left: 12px;
-}
-
-/* RIGHT ACTIONS */
-.nav-right {
+/* Left Section */
+.nav-left-group {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  flex: 1;
 }
 
-.outline-btn {
-  border: 1px solid #008cff;
-  background: transparent;
-  color: #008cff;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.text-link {
-  color: #008cff;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.primary-btn {
-  background: #008cff;
-  color: #fff;
-  padding: 5px 12px;
-  border-radius: 4px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-/* =====================================================
-   HERO BACKGROUND
-===================================================== */
-.mmt-hero-wrapper {
-  background: #051322
-    url('https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/bg7.jpg')
-    no-repeat center bottom;
-  background-size: cover;
-  min-height: 550px;
-  padding-top: 40px;
-}
-
-.mmt-main-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* =====================================================
-   NAV ICON TABS
-===================================================== */
-.mmt-nav-bar {
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px 30px;
-  border-radius: 10px;
-  width: fit-content;
-  margin: 0 auto;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 10;
-}
-
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 80px;
-  padding: 5px 10px;
-  cursor: pointer;
-  color: #4a4a4a;
-}
-
-.nav-item.active {
-  color: #008cff;
-  border-bottom: 3px solid #008cff;
-}
-
-.nav-item .icon {
-  font-size: 24px;
-  margin-bottom: 5px;
-}
-
-.nav-item span {
-  font-size: 11px;
-  font-weight: 700;
-  text-align: center;
-}
-
-/* =====================================================
-   SEARCH CARD
-===================================================== */
-.mmt-card {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 45px 25px 50px;
-  margin-top: -15px;
-  position: relative;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* =====================================================
-   SEARCH GRID
-===================================================== */
-.search-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1.1fr 0.8fr 0.8fr 1.2fr;
-  border: 1px solid #e7e7e7;
-  border-radius: 10px;
-}
-
-.input-box {
-  padding: 12px 20px;
-  cursor: pointer;
-}
-
-.input-box:hover {
-  background: #f2f2f2;
-}
-
-.border-r {
-  border-right: 1px solid #e7e7e7;
-}
-
-.input-box label {
-  font-size: 14px;
-  font-weight: 700;
-  color: #4a4a4a;
-}
-
-.city-name {
-  font-size: 30px;
-  font-weight: 900;
-  margin-top: 5px;
-}
-
-.city-name .light {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.sub-text {
-  font-size: 11px;
-  color: #4a4a4a;
-  margin-top: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.placeholder-text {
-  color: #9b9b9b;
-  font-size: 11px;
-  margin-top: 15px;
-}
-
-/* =====================================================
-   FLEXIFLY BAR
-===================================================== */
-.flexifly-inner {
-  margin-top: 25px;
-  background: linear-gradient(to right, #f2f8ff, #ffffff);
-  border: 1px solid #e7e7e7;
-  border-radius: 8px;
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-}
-
-.flexifly-inner input {
-  width: 18px;
-  height: 18px;
-  margin-right: 12px;
-}
-
-.blue-link {
-  color: #008cff;
-  font-weight: 700;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-/* =====================================================
-   SEARCH BUTTON
-===================================================== */
-.search-btn {
-  position: absolute;
-  bottom: -28px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, #53b2fe, #065af3);
-  color: #ffffff;
+.sidebar-toggle {
+  background: none;
   border: none;
-  padding: 12px 100px;
-  font-size: 24px;
-  font-weight: 900;
-  border-radius: 40px;
+  font-size: 22px;
+  color: #008cff;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.search-btn:hover {
-  background: linear-gradient(90deg, #065af3, #53b2fe);
-}
-
-
-/* ================= NAVBAR LOGO ================= */
-.nav-logo {
+  padding: 5px;
   display: flex;
   align-items: center;
-  margin-right: 20px;
-  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+  transform: scale(1.1);
 }
 
 .nav-logo img {
-  height: 34px;          /* professional size */
+  height: 35px;
   width: auto;
   object-fit: contain;
 }
 
+/* Center Links - Hidden on mobile */
+.nav-center-links {
+  display: none;
+}
 
+/* Right Section */
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
+.property-btn {
+  display: none;
+}
 
+.auth-box {
+  display: flex;
+  align-items: center;
+}
 
-/* ===== MEGA MENU ===== */
+.auth-box .login-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background: linear-gradient(90deg, #53b2fe, #065af3);
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  min-width: auto;
+  transition: all 0.3s ease;
+}
 
-.mega-trigger {
-  position: relative;
+.auth-box .login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 90, 243, 0.3);
+}
+
+.user-icon {
+  font-size: 22px;
+}
+
+.login-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.login-text span {
+  font-size: 9px;
+  opacity: 0.9;
+}
+
+.login-text strong {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #333;
   cursor: pointer;
+  padding: 5px;
 }
 
-/* Mega menu container */
-.mega-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100vw;
-  background: #ffffff;
-  padding: 40px 60px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  z-index: 999;
-  animation: fadeUp 0.3s ease;
+/* ================= RESPONSIVE BREAKPOINTS ================= */
+
+/* Small Tablets (≥576px) */
+@media (min-width: 576px) {
+  .top-navbar {
+    padding: 0 20px;
+  }
+  
+  .nav-logo img {
+    height: 40px;
+  }
+  
+  .sidebar-toggle {
+    font-size: 24px;
+  }
+  
+  .user-icon {
+    font-size: 24px;
+  }
+  
+  .login-text span {
+    font-size: 10px;
+  }
+  
+  .login-text strong {
+    font-size: 12px;
+  }
 }
 
-/* Smooth animation */
-@keyframes fadeUp {
-  from {
+/* Tablets (≥768px) */
+@media (min-width: 768px) {
+  .top-navbar {
+    height: 80px;
+    padding: 0 25px;
+  }
+  
+  body {
+    padding-top: 80px;
+  }
+  
+  .nav-left-group {
+    flex: 0;
+  }
+  
+  .nav-center-links {
+    display: flex;
+    gap: 25px;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .nav-item-link {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-item-link:hover {
+    color: #008cff;
+  }
+  
+  .property-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #008cff;
+    border: 1.5px solid #008cff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  
+  .property-btn:hover {
+    background: #008cff;
+    color: white;
+  }
+  
+  .auth-box .login-btn {
+    padding: 8px 16px;
+    gap: 10px;
+  }
+  
+  .user-icon {
+    font-size: 26px;
+  }
+  
+  .login-text span {
+    font-size: 11px;
+  }
+  
+  .login-text strong {
+    font-size: 13px;
+  }
+}
+
+/* Desktop (≥992px) */
+@media (min-width: 992px) {
+  .top-navbar {
+    padding: 0 30px;
+  }
+  
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .nav-center-links {
+    gap: 30px;
+  }
+  
+  .nav-item-link {
+    font-size: 15px;
+  }
+  
+  .property-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  
+  .auth-box .login-btn {
+    padding: 10px 20px;
+  }
+  
+  .login-text span {
+    font-size: 12px;
+  }
+  
+  .login-text strong {
+    font-size: 14px;
+  }
+}
+
+/* Large Desktop (≥1200px) */
+@media (min-width: 1200px) {
+  .nav-center-links {
+    gap: 40px;
+  }
+  
+  .nav-item-link {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Menu (For smaller screens) */
+@media (max-width: 767px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 1900;
+    padding: 20px;
+    border-top: 1px solid #e7e7e7;
+    transform: translateY(-100%);
     opacity: 0;
-    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
-  to {
-    opacity: 1;
+  
+  .mobile-menu.active {
     transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .mobile-menu-link {
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .mobile-menu-link:hover {
+    background: #f0f8ff;
+    color: #008cff;
   }
 }
-
-/* Ensure ToursAttractions fits nicely */
-.mega-menu .tours-wrapper {
-  margin: 0;
-  padding: 0;
-}
-
-/* Prevent menu close flicker */
-.mega-menu:hover {
-  display: block;
-}
-
-
-
-

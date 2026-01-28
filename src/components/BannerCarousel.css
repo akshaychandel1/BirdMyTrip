@@ -1,0 +1,246 @@
+.carousel-container {
+  position: relative;
+  max-width: 1600px;
+  margin: 40px auto;
+  /* display: flex; */
+  align-items: center;
+  padding: 0 20px;
+}
+
+.banner-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  padding: 10px 0;
+}
+
+.banner-wrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.banner-card {
+  min-width: calc(100% / 2.2); /* Displays approx 2.2 cards at once */
+  height: 220px;
+  border-radius: 12px;
+  padding: 24px;
+  color: white;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Specific Banner Backgrounds & Styles */
+.republic {
+  background: linear-gradient(135deg, #ff8c00 30%, #ffc107 100%);
+}
+
+.thailand {
+  background-color: #00b4d8;
+}
+
+.telegram {
+  background-color: #003580;
+}
+
+.banner-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.banner-title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.banner-highlight {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 5px 0 15px 0;
+}
+
+.banner-btn {
+  background: #2b6cff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  width: fit-content;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Graphics and Badges */
+.banner-graphic {
+  flex: 1;
+  position: relative;
+}
+
+.promo-badge {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  background: #2b6cff;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  transform: rotate(15deg);
+  border: 2px dashed white;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #f0f0f0;
+}
+
+.nav-btn.left {
+  left: -5px;
+}
+
+.nav-btn.right {
+  right: -5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-card {
+    min-width: 90%;
+  }
+}
+.carousel-container {
+  max-width: 1600px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-title {
+  color: #001e42;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.relative-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.banner-wrapper {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 10px 0;
+}
+
+.banner-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.banner-card {
+  /* Ek saath lagbhag 2.5 cards dikhenge */
+  min-width: 420px; 
+  height: 200px;
+  border-radius: 16px;
+  padding: 24px;
+  color: white;
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Background Colors for 5 Cards */
+.republic { background: linear-gradient(135deg, #FF9933 0%, #FFB366 100%); }
+.thailand { background: linear-gradient(135deg, #00AEEF 0%, #40C4FF 100%); }
+.telegram { background: linear-gradient(135deg, #001E42 0%, #003366 100%); }
+.flights { background: linear-gradient(135deg, #8E44AD 0%, #9B59B6 100%); }
+.lucky { background: linear-gradient(135deg, #E67E22 0%, #F39C12 100%); }
+
+.banner-content {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.brand { font-weight: bold; opacity: 0.9; }
+.banner-title { font-size: 1.2rem; margin: 8px 0 0 0; }
+.banner-highlight { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
+
+.banner-btn {
+  background: white;
+  color: #001e42;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  width: fit-content;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.nav-btn:hover { background: #f8f8f8; scale: 1.05; }
+.nav-btn.left { left: -24px; }
+.nav-btn.right { right: -24px; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .banner-card { min-width: 85%; height: 180px; }
+  .nav-btn { display: none; } /* Mobile pe arrows ki zaroorat nahi hoti */
+}

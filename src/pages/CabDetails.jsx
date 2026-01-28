@@ -8,10 +8,7 @@ export default function CabDetails() {
   const navigate = useNavigate();
 
   const cab = cabs.find((c) => c.id.toString() === id);
-
-  if (!cab) {
-    return <h2 style={{ padding: 20 }}>Cab not found</h2>;
-  }
+  if (!cab) return <h2 style={{ padding: 120 }}>Cab not found</h2>;
 
   return (
     <div className="cab-details-page">
@@ -24,18 +21,11 @@ export default function CabDetails() {
 
         <div className="cab-details-info">
           <h2>{cab.name}</h2>
-
-          <p className="route">
-            {cab.from} → {cab.to}
-          </p>
-
-          <p className="type">Type: {cab.type}</p>
-
+          <p>{cab.from} → {cab.to}</p>
+          <p>Type: {cab.type}</p>
           <p className="price">₹{cab.price}</p>
 
-          <button className="book-now-btn">
-            Book Now
-          </button>
+          <button className="book-now-btn">Book Now</button>
         </div>
       </div>
     </div>
