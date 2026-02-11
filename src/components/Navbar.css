@@ -319,3 +319,10 @@
     color: #008cff;
   }
 }
+/* Navbar.css mein add karein */
+.nav-logo img {
+  width: 64px !important; /* w-16 is 4rem/64px */
+  height: auto;
+  display: inline-block;
+  object-fit: contain;
+}

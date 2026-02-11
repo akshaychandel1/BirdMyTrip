@@ -54,7 +54,7 @@ const NewUserExclusive = () => {
               </div>
               
               <div className="ticket-right">
-                <span className="category-icon">{coupon.icon}</span>
+                <span className="category-icon text-blue-500">{coupon.icon}</span>
               </div>
             </div>
           ))}

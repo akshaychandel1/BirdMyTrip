@@ -2,10 +2,10 @@ import "./MegaLinksSection.css";
 
 export default function MegaLinksSection() {
   return (
-    <section className="mega-section">
+    <section className="mega-sectio">
       <div className="mega-container">
 
-        <div className="mega-block">
+        <div className="mega-block ">
           <h4>BIRD MY TRIP</h4>
           <p>
             About Us, Investor Relations, Careers, Sustainability, Bird My Trip
