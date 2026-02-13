@@ -196,6 +196,7 @@
 
 
 
+
 import React, { useState, useContext, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaBars, FaUserCircle } from "react-icons/fa";
@@ -236,7 +237,7 @@ const Navbar = ({ toggleSidebar, sidebarOpen }) => {
         className={`fixed top-0 left-0 w-full z-[2000] transition-all duration-300 border-b border-gray-200 mb-[70px]
         ${scrolled ? "bg-white shadow-md h-16" : "bg-white h-20"} flex items-center px-4 md:px-8`}
       >
-        <div className="w-full max-w-[1400px] mx-auto flex justify-between items-center">
+        <div className="w-full mx-auto flex justify-between items-center">
           
           {/* LEFT SECTION: Hamburger + Logo */}
           <div className="flex items-center gap-3 md:gap-4 flex-1 md:flex-none">
@@ -270,14 +271,7 @@ const Navbar = ({ toggleSidebar, sidebarOpen }) => {
             {isAuthenticated ? (
               <div className="flex items-center gap-3">
                 {/* Desktop User Info */}
-                <div className="hidden md:flex flex-col items-end">
-                  <span className="text-sm font-medium text-gray-800">
-                    {user?.name || "Welcome"}
-                  </span>
-                  <span className="text-xs text-gray-500">
-                    {user?.tier || "Member"}
-                  </span>
-                </div>
+                
                 
                 {/* Dashboard Button */}
                 <button
@@ -293,19 +287,19 @@ const Navbar = ({ toggleSidebar, sidebarOpen }) => {
                       Welcome, {user?.name?.split(' ')[0] || "User"}
                     </span>
                     <strong className="text-[11px] md:text-sm font-bold flex items-center gap-1">
-                      My Dashboard <span className="text-[8px]">→</span>
+                      My Dashboard 
                     </strong>
                   </div>
                 </button>
 
-                {/* Desktop Logout Button */}
+                {/* Desktop Logout Button
                 <button
                   onClick={handleLogout}
                   className="hidden md:flex items-center gap-2 px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors ml-2"
                   title="Logout"
                 >
                   <span className="text-sm font-medium">Logout</span>
-                </button>
+                </button> */}
               </div>
             ) : (
               /* Login Button */

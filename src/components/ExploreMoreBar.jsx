@@ -36,7 +36,7 @@
 //             <CreditCard size={20} color="#008cff" />
 //           </span>
 //           <div>
-//             <b>ICICI Credit Card</b>
+//             <b>Credit Cards</b>
 //             <p>Get rewards & big benefits</p>
 //           </div>
 //         </div>
@@ -48,7 +48,7 @@
 //           </span>
 //           <div>
 //             <b>MICE</b>
-//             <p>Offsites, Events & Meetings</p>
+//             <p>Events & Meetings</p>
 //           </div>
 //         </div>
 
@@ -96,70 +96,48 @@
 
 
 
-
 import React from "react";
-import { Compass, Map, CreditCard, Users, Gift } from "lucide-react";
-import "./ExploreMoreBar.css";
+import { Music, Bus, Church } from "lucide-react";
 
 export default function ExploreMoreBar() {
   return (
-    <div className="explore-wrapper">
-      <div className="explore-bar">
-
-        {/* Where2Go */}
-        <div className="explore-item">
-          <span className="icon">
-            <Compass size={20} color="#008cff" />
+    <div className="relative -mt-2.5 flex justify-center z-5 px-4 sm:px-2">
+      <div className="bg-white flex gap-10 sm:gap-4 md:gap-8 lg:gap-10 px-8 py-4 sm:px-4 sm:py-2 md:px-6 md:py-3.5 lg:px-8 lg:py-4 rounded-[40px] sm:rounded-2xl md:rounded-3xl shadow-2xl sm:shadow-md items-center justify-center overflow-x-auto scrollbar-none">
+        
+        {/* Night Club */}
+        <a href="/night-club" className="flex gap-3 sm:gap-1.5 md:gap-2 items-center cursor-pointer whitespace-nowrap flex-shrink-0 px-2 py-1.5 hover:bg-gray-50 rounded-lg transition-all">
+          <span className="flex items-center">
+            <Music size={20} className="text-[#008cff] sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5" />
           </span>
           <div>
-            <b>Where2Go</b>
-          </div>
-        </div>
-
-        {/* How2Go */}
-        <div className="explore-item">
-          <span className="icon">
-            <Map size={20} color="#008cff" />
-          </span>
-          <div>
-            <b>
-              How2Go <span className="new">new</span>
+            <b className="text-sm sm:text-[9px] md:text-xs lg:text-sm font-semibold">
+              Night Club <span className="bg-[#e05194] text-white text-[10px] sm:text-[6px] md:text-[8px] lg:text-[10px] px-1.5 py-0.5 sm:px-1 sm:py-0 rounded-full ml-1.5 font-medium">new</span>
             </b>
-            <p>Find routes to anywhere</p>
+            <p className="text-xs sm:text-[7px] md:text-[10px] lg:text-xs text-gray-500 m-0">Party & nightlife</p>
           </div>
-        </div>
+        </a>
 
-        {/* Credit Card */}
-        <div className="explore-item">
-          <span className="icon">
-            <CreditCard size={20} color="#008cff" />
+        {/* BMT */}
+        <a href="/bmt" className="flex gap-3 sm:gap-1.5 md:gap-2 items-center cursor-pointer whitespace-nowrap flex-shrink-0 px-2 py-1.5 hover:bg-gray-50 rounded-lg transition-all">
+          <span className="flex items-center">
+            <Bus size={20} className="text-[#008cff] sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5" />
           </span>
           <div>
-            <b>Credit Cards</b>
-            <p>Get rewards & big benefits</p>
+            <b className="text-sm sm:text-[9px] md:text-xs lg:text-sm font-semibold">BMT</b>
+            <p className="text-xs sm:text-[7px] md:text-[10px] lg:text-xs text-gray-500 m-0">Book bus tickets</p>
           </div>
-        </div>
+        </a>
 
-        {/* MICE */}
-        <div className="explore-item">
-          <span className="icon">
-            <Users size={20} color="#008cff" />
+        {/* Darshan */}
+        <a href="/darshan" className="flex gap-3 sm:gap-1.5 md:gap-2 items-center cursor-pointer whitespace-nowrap flex-shrink-0 px-2 py-1.5 hover:bg-gray-50 rounded-lg transition-all">
+          <span className="flex items-center">
+            <Church size={20} className="text-[#008cff] sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5" />
           </span>
           <div>
-            <b>MICE</b>
-            <p>Events & Meetings</p>
+            <b className="text-sm sm:text-[9px] md:text-xs lg:text-sm font-semibold">BMT Darshan</b>
+            <p className="text-xs sm:text-[7px] md:text-[10px] lg:text-xs text-gray-500 m-0">Temple visits & rituals</p>
           </div>
-        </div>
-
-        {/* Gift Cards */}
-        <div className="explore-item">
-          <span className="icon">
-            <Gift size={20} color="#008cff" />
-          </span>
-          <div>
-            <b>Gift Cards</b>
-          </div>
-        </div>
+        </a>
 
       </div>
     </div>

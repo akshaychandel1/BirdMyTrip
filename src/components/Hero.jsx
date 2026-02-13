@@ -1195,7 +1195,7 @@
 //   const [attractionQuery, setAttractionQuery] = useState("");
 
 //   const tabs = [
-//     { id: "hotels", label: "Hotels & Homes", icon: Hotel },
+//     { id: "hotels", label: "Homestay & Villas", icon: Hotel },
 //     { id: "flights", label: "Flights", icon: Plane },
 //     { id: "flight-hotel", label: "Flight + Hotel", icon: Briefcase },
 //     { id: "trains", label: "Trains", icon: Train },
@@ -1895,14 +1895,14 @@ const Hero = () => {
 
   const tabs = [
     { id: 'hotels', name: 'Hotels', icon: <Bed size={18} /> },
-    { id: 'hotels-homes', name: 'Hotels & Homes', icon: <Building size={18} /> },
+    { id: 'hotels-homes', name: 'Homestay & Villas', icon: <Building size={18} /> },
     { id: 'flights', name: 'Flights', icon: <Plane size={18} /> },
-    { id: 'flight-hotel', name: 'Flights & Hotel', icon: <Hotel size={18} /> },
+    { id: 'flight-hotel', name: 'Flights + Hotel', icon: <Hotel size={18} /> },
     { id: 'bus', name: 'Bus', icon: <Bus size={18} /> },
     { id: 'cab', name: 'Cab', icon: <Car size={18} /> },
-    { id: 'cruise', name: 'Cruise', icon: <Ship size={18} /> },
-    { id: 'tour', name: 'Tour', icon: <Umbrella size={18} /> },
-    { id: 'holiday', name: 'Holiday', icon: <Palmtree size={18} /> },
+    { id: 'holiday', name: 'Holiday Packages', icon: <Palmtree size={18} /> },
+    { id: 'tour', name: 'Tour & Attraction', icon: <Umbrella size={18} /> },
+       { id: 'cruise', name: 'Cruise', icon: <Ship size={18} /> },
   ];
 
   // Data for suggestions
@@ -1991,7 +1991,7 @@ const Hero = () => {
         };
         navigatePath = '/hotels';
         break;
-      case 'Hotels & Homes':
+      case 'Homestay & Villas':
         setHotelsData(prev => ({...prev, destination: hotelsDestinationRef.current}));
         data = { 
           type: 'hotels-homes', 
@@ -2010,7 +2010,7 @@ const Hero = () => {
         };
         navigatePath = '/flights';
         break;
-      case 'Flights & Hotel':
+      case 'Flights + Hotel':
         setFlightHotelData(prev => ({...prev, from: flightHotelFromRef.current, to: flightHotelToRef.current}));
         data = { 
           type: 'flight-hotel', 
@@ -2048,7 +2048,7 @@ const Hero = () => {
         };
         navigatePath = '/cruise';
         break;
-      case 'Tour':
+      case 'Tour & Attraction':
         setTourData(prev => ({...prev, destination: tourDestinationRef.current}));
         data = { 
           type: 'tour', 
@@ -2057,7 +2057,7 @@ const Hero = () => {
         };
         navigatePath = '/tours';
         break;
-      case 'Holiday':
+      case 'Holiday Packages':
         setHolidayData(prev => ({...prev, from: holidayFromRef.current, to: holidayToRef.current}));
         data = { 
           type: 'holiday', 
@@ -2667,7 +2667,7 @@ const Hero = () => {
 
   // Hotels Tab
   const renderHotelsTab = (isHomes = false) => {
-    const tabName = isHomes ? 'Hotels & Homes' : 'Hotels';
+    const tabName = isHomes ? 'Homestay & Villas' : 'Hotels';
     return (
       <div className="flex flex-col lg:flex-row gap-2 items-stretch">
         {/* Destination */}
@@ -3202,10 +3202,10 @@ const Hero = () => {
             Drop off at a different location
           </label>
           
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <span className="text-sm text-gray-700">Age:</span>
             <span className="font-bold text-[#1a2b48]">{cabData.age}</span>
-          </div>
+          </div> */}
         </div>
       </div>
     );
@@ -3508,10 +3508,10 @@ const Hero = () => {
 
   return (
     <div className="w-full min-h-[500px] bg-blue-900 bg-cover bg-center flex flex-col items-center pt-16 px-4" 
-         style={{ backgroundImage: "url('https://dimg04.tripcdn.com/images/05E3f12000lo6txgqF88C.webp')" }}>
+         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1608332311307-2d533ae0fd2d?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
       
       {/* Tab Navigation */}
-      <div className="bg-[#0a1121]/80 backdrop-blur-md p-1 rounded-full flex flex-wrap justify-center items-center mb-0 border border-white/10 max-w-6xl">
+      <div className="bg-[#0a1121]/80 backdrop-blur-md p-0.5 rounded-full flex flex-wrap justify-center items-center mb-0 border border-white/10 max-w-8xl">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -3538,14 +3538,14 @@ const Hero = () => {
       {/* Main Search Container */}
       <div className="w-full max-w-7xl bg-white rounded-xl shadow-2xl p-4 lg:p-6 relative mt-4">
         {activeTab === 'Hotels' && renderHotelsTab(false)}
-        {activeTab === 'Hotels & Homes' && renderHotelsTab(true)}
+        {activeTab === 'Homestay & Villas' && renderHotelsTab(true)}
         {activeTab === 'Flights' && renderFlightsTab()}
-        {activeTab === 'Flights & Hotel' && renderFlightHotelTab()}
+        {activeTab === 'Flights + Hotel' && renderFlightHotelTab()}
         {activeTab === 'Bus' && renderBusTab()}
         {activeTab === 'Cab' && renderCabTab()}
         {activeTab === 'Cruise' && renderCruiseTab()}
-        {activeTab === 'Tour' && renderTourTab()}
-        {activeTab === 'Holiday' && renderHolidayTab()}
+        {activeTab === 'Tour & Attraction' && renderTourTab()}
+        {activeTab === 'Holiday Packages' && renderHolidayTab()}
       </div>
 
       {/* Modals */}

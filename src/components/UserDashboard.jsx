@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   Bell, User, Briefcase, Shield, CreditCard, 
   MapPin, Plane, ChevronRight, Search, Settings,
   Calendar, TrendingDown, Globe, Smartphone, Mail,
   Lock, Eye, EyeOff, X, FileText, Headphones,
   Download, Clock, Star, CheckCircle, AlertCircle,
-  BarChart3, Award, Gift, Users, HelpCircle
+  BarChart3, Award, Gift, Users, HelpCircle, LogOut
 } from 'lucide-react';
+import { AuthContext } from '../contexts/AuthContext';
 
 // Mock data for the dashboard
 const mockFlights = [
@@ -35,13 +37,16 @@ const mockTransactions = [
 ];
 
 const UserDashboard = () => {
+  const navigate = useNavigate();
+  const { logout, user } = useContext(AuthContext);
   const [activeTab, setActiveTab] = useState('Dashboard');
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [notifications, setNotifications] = useState(3);
   const [userData, setUserData] = useState({
-    name: 'Akshay Kumar',
-    email: 'akshaykumar200221@gmail.com',
+    name: user?.name || 'Akshay Kumar',
+    email: user?.email || 'akshaykumar200221@gmail.com',
     phone: '+91 98765 43210',
     verified: true,
     memberSince: 'Feb 2026',
@@ -60,6 +65,11 @@ const UserDashboard = () => {
     { id: 2, action: 'Created price alert', details: 'DEL → BOM', time: '2 days ago' },
     { id: 3, action: 'Booked flight', details: 'BLR → DEL', time: '1 week ago' },
   ]);
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   const navigationItems = [
     { id: 'Dashboard', icon: BarChart3, color: 'text-blue-600' },
@@ -88,7 +98,6 @@ const UserDashboard = () => {
   };
 
   const handleDeleteAlert = (id) => {
-    // In a real app, this would call an API
     console.log('Delete alert:', id);
   };
 
@@ -98,6 +107,15 @@ const UserDashboard = () => {
   };
 
   const toggle2FA = () => setIs2FAEnabled(!is2FAEnabled);
+
+  const getInitials = (name) => {
+    return name
+      .split(' ')
+      .map(word => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  };
 
   const renderContent = () => {
     switch (activeTab) {
@@ -845,13 +863,54 @@ const UserDashboard = () => {
           </button>
           <h1 className="text-lg font-semibold text-gray-800">{activeTab}</h1>
           <div className="relative">
-            <button className="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 border-2 border-blue-200">
-              <User size={20} />
+            <button 
+              onClick={() => setShowProfileMenu(!showProfileMenu)}
+              className="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 border-2 border-blue-200 font-semibold"
+            >
+              {getInitials(userData.name)}
             </button>
             {notifications > 0 && (
               <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center animate-pulse">
                 {notifications}
               </span>
+            )}
+            
+            {/* Mobile Profile Dropdown Menu */}
+            {showProfileMenu && (
+              <div className="absolute right-0 top-12 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                <div className="px-4 py-3 border-b border-gray-100">
+                  <p className="font-medium text-gray-800">{userData.name}</p>
+                  <p className="text-sm text-gray-500 truncate">{userData.email}</p>
+                </div>
+                <button
+                  onClick={() => {
+                    setActiveTab('Profile');
+                    setShowProfileMenu(false);
+                  }}
+                  className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                >
+                  <User size={16} />
+                  Profile
+                </button>
+                <button
+                  onClick={() => {
+                    setActiveTab('Settings');
+                    setShowProfileMenu(false);
+                  }}
+                  className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                >
+                  <Settings size={16} />
+                  Settings
+                </button>
+                <div className="border-t border-gray-100 my-1"></div>
+                <button
+                  onClick={handleLogout}
+                  className="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50 flex items-center gap-2"
+                >
+                  <LogOut size={16} />
+                  Logout
+                </button>
+              </div>
             )}
           </div>
         </div>
@@ -867,8 +926,15 @@ const UserDashboard = () => {
             ></div>
             <div className="absolute left-0 top-0 bottom-0 w-64 bg-white shadow-xl">
               <div className="p-6 border-b border-gray-200">
-               
-                <div className="text-gray-500 text-sm mt-1">User Dashboard</div>
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-lg">
+                    {getInitials(userData.name)}
+                  </div>
+                  <div>
+                    <div className="font-medium text-gray-800">{userData.name}</div>
+                    <div className="text-sm text-gray-500">{userData.email}</div>
+                  </div>
+                </div>
               </div>
               <nav className="mt-4 px-4 space-y-1">
                 {navigationItems.map((item) => (
@@ -891,6 +957,15 @@ const UserDashboard = () => {
                     )}
                   </button>
                 ))}
+                
+                {/* Mobile Logout Button */}
+                <button
+                  onClick={handleLogout}
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-red-600 hover:bg-red-50 mt-4 border-t border-gray-200 pt-4"
+                >
+                  <LogOut size={20} />
+                  <span className="font-medium">Logout</span>
+                </button>
               </nav>
             </div>
           </div>
@@ -922,17 +997,7 @@ const UserDashboard = () => {
             ))}
           </nav>
           
-          <div className="p-4 border-t border-gray-200">
-            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-              <div className="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                <User size={20} />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="font-medium text-gray-800 truncate">{userData.name}</div>
-                <div className="text-gray-500 text-sm truncate">{userData.email}</div>
-              </div>
-            </div>
-          </div>
+
         </aside>
 
         {/* Main Content */}
@@ -946,14 +1011,63 @@ const UserDashboard = () => {
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <button className="relative p-2">
-                <Bell className="text-gray-600 hover:text-blue-600 transition-colors" size={22} />
-                {notifications > 0 && (
-                  <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
+              
+              {/* Desktop Profile Dropdown */}
+              <div className="relative">
+                <button 
+                  onClick={() => setShowProfileMenu(!showProfileMenu)}
+                  className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 border-2 border-white shadow-sm font-bold text-lg hover:border-blue-300 transition-colors"
+                >
+                  {getInitials(userData.name)}
+                </button>
+                
+                {showProfileMenu && (
+                  <div className="absolute right-0 top-14 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                    <div className="px-4 py-3 border-b border-gray-100">
+                      <p className="font-medium text-gray-800">{userData.name}</p>
+                      <p className="text-sm text-gray-500 truncate">{userData.email}</p>
+                      <p className="text-xs text-blue-600 mt-1">Member since {userData.memberSince}</p>
+                    </div>
+                    <button
+                      onClick={() => {
+                        setActiveTab('Profile');
+                        setShowProfileMenu(false);
+                      }}
+                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                    >
+                      <User size={16} />
+                      My Profile
+                    </button>
+                    <button
+                      onClick={() => {
+                        setActiveTab('Settings');
+                        setShowProfileMenu(false);
+                      }}
+                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                    >
+                      <Settings size={16} />
+                      Account Settings
+                    </button>
+                    <button
+                      onClick={() => {
+                        setActiveTab('Security');
+                        setShowProfileMenu(false);
+                      }}
+                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                    >
+                      <Shield size={16} />
+                      Security
+                    </button>
+                    <div className="border-t border-gray-100 my-1"></div>
+                    <button
+                      onClick={handleLogout}
+                      className="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50 flex items-center gap-2"
+                    >
+                      <LogOut size={16} />
+                      Logout
+                    </button>
+                  </div>
                 )}
-              </button>
-              <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 border-2 border-white shadow-sm">
-                <User size={24} />
               </div>
             </div>
           </header>
