@@ -5,7 +5,7 @@ import {
   Shield, Ship, Send, Map, Clock, Ticket, 
  Award, Users, Home, Building, 
   Car, Bus, Train as TrainIcon,Church,
-  Luggage, Gift, Hotel,TicketsPlane,PartyPopper
+  Luggage, Gift, Hotel,TicketsPlane,PartyPopper,BadgePercent
 } from "lucide-react";
 import "./Sidebar.css";
 
@@ -115,6 +115,7 @@ export default function Sidebar({ open, setOpen }) {
           <ul>
             <li><Link to="/gift" onClick={handleLinkClick}><Gift className="s-icon" /><span>Gift Card</span></Link></li>
             <li><Link to="/invite" onClick={handleLinkClick}><Users className="s-icon" /><span>Invite & Earn</span></Link></li>
+            <li><Link to="/offers" onClick={handleLinkClick}><BadgePercent className="s-icon" /><span>Offers</span></Link></li>
           </ul>
         </div>
 

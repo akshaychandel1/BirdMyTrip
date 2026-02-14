@@ -74,6 +74,9 @@ import CabBooking from "./pages/CabBooking.jsx";
 /* CONTEXT - IMPORT AuthProvider AND AuthContext */
 import { AuthProvider, AuthContext } from "./contexts/AuthContext";
 import TravelInsuranceBooking from "./pages/TravelInsuranceBooking.jsx";
+import DarshanList from "./pages/DarshanList.jsx";
+import DarshanDetail from "./pages/DarshanDetail.jsx";
+import OffersPage from "./components/Offers.jsx";
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -273,6 +276,9 @@ function AppContent() {
               <Route path="/travel-insurance-booking" element={<PageLayout><TravelInsuranceBooking /></PageLayout>} />
               <Route path="/cab-detail/:id" element={<PageLayout><CabDetails /></PageLayout>} />
         <Route path="/cab-booking" element={<PageLayout><CabBooking /></PageLayout>} />
+        <Route path="/darshan" element={<PageLayout><DarshanList /></PageLayout>} />
+        <Route path="/darshan/:id" element={<PageLayout><DarshanDetail /></PageLayout>} />
+        <Route path="/offers" element={<PageLayout><OffersPage /></PageLayout>} />
               
               {/* Protected Route - UserDashboard */}
               <Route path="/user-dashboard" element={

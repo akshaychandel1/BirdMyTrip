@@ -833,8 +833,6 @@ const TravelInsurance = () => {
 
         
       </div>
-
-      
     </div>
   );
 };
